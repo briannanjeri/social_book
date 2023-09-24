@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth import get_user_model
 import uuid
 from datetime import datetime 
-
+   
 User=get_user_model()
 
 # Create your models here.
@@ -35,3 +35,9 @@ class LikePost(models.Model):
     def __str__(self):
         return self.username
         
+class FollowersCount(models.Model): 
+    follower=models.CharField(max_length=100)
+    user=models.CharField(max_length=100)   
+
+    def __str__(self):
+        return self.user   
